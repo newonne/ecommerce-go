@@ -35,7 +35,7 @@ func (h *Handler) RegisterRoutes(router *mux.Router) {
 
 func (h *Handler) handleCheckout(w http.ResponseWriter, r *http.Request) {
 	userID := auth.GetUserIDFromContext(r.Context())
-	
+
 	var cart types.CartCheckoutPayload
 	if err := utils.ParseJSON(r, &cart); err != nil {
 		utils.WriteError(w, http.StatusBadRequest, err)

@@ -1,0 +1,8 @@
+go run cmd/main.go para executar o projeto
+
+instalacao do pacote que ajuda a gerenciar comandos no banco de dados
+go get -u github.com/golang-migrate/migrate/v4
+
+
+//tenta migrar as consultas e executar no banco de dados ( pelo q entendi)
+migrate -path ./migrations -database "mysql://newonne:@Hertz94@tcp(192.168.100.13:3306)/ecom" up

@@ -49,6 +49,13 @@ func calculateTotalPrice(cartItems []types.CartCheckoutItem, products map[int]ty
 	return total
 }
 
+/*
+Verificar a disponibilidade de estoque para os itens no carrinho.
+Calcular o valor total da compra.
+Atualizar os estoques de produtos.
+Criar o pedido no banco de dados e os itens do pedido.
+Retornar o ID do pedido, o valor total da compra e um possível erro.
+*/
 func (h *Handler) createOrder(products []types.Product, cartItems []types.CartCheckoutItem, userID int) (int, float64, error) {
 	// create a map of products for easier access
 	productsMap := make(map[int]types.Product)

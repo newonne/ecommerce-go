@@ -4,7 +4,9 @@ import (
 	"testing"
 )
 
+// Função de teste para verificar a funcionalidade de hashing de senhas.
 func TestHashPassword(t *testing.T) {
+	// Tenta gerar um hash para a senha "password". A função HashPassword retorna o hash e um possível erro.
 	hash, err := HashPassword("password")
 	if err != nil {
 		t.Errorf("error hashing password: %v", err)
@@ -19,6 +21,7 @@ func TestHashPassword(t *testing.T) {
 	}
 }
 
+// Função de teste para verificar a comparação de senhas com hashes.
 func TestComparePasswords(t *testing.T) {
 	hash, err := HashPassword("password")
 	if err != nil {
